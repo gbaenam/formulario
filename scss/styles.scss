@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    padding: 20px 10px;
+}
+
+.form {
+
+    &__text-area {
+        resize: none;
+    }
+}
+
+

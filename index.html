@@ -9,10 +9,63 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <form action="">
+    <div class="container">
+        <form action="" class="form" id="form">
+            <fieldset class="form__fielset">
+                <legend class="form__legent">Formulario de Cont&aacute;cto</legend>
+
+                    <!-- Nombre -->
+                    <label for="name" class="form__label">Nombre</label>
+                    <div class="form__input-group">
+                        <p></p>
+                        <input type="text" name="name" class="form__input" id="name">
+                    </div>
+
+                    <!-- Correo electrónico. -->
+                    <label for="email" class="form__label">Correo Electr&oacute;nico</label>
+                    <div class="form__input-group">
+                        <p></p>
+                        <input type="email" name="email" class="for__input" id="email">
+                    </div>
+
+                    <!-- Correo electrónico confirmar. -->
+                    <label for="confirm-email" class="form__label">Confirmar Correo Electr&oacute;nico</label>
+                    <div class="form__input-group">
+                        <p></p>
+                        <input type="email" name="confirm-email" class="for__input" id="confirm-email">
+                    </div>
+
+                    <!-- Mensaje. -->
+                    <label for="text-area" class="form__label">D&eacute;janos tu mensaje</label>
+                    <div class="form__input-group">
+                        <p></p>
+                        <textarea name="text-area" class="form__text-area" id="text-area" cols="23" rows="10"></textarea>
+                    </div>
+            </fieldset>
 
 
-    </form>
+        </form>
+    </div>
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
+
+<!-- Grupo Términos y Condiciones -->
+<!-- <div class="formulario__grupo-terminos" id="grupo__terminos">
+    <label class="formulario__label">
+        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+        Acepto los t&eacute;rminos y condiciones.
+    </label>
+</div> -->
+
+<!-- Mensaje de error -->
+<!-- <div class="formulario__mensaje" id="formulario__mensaje">
+    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellene el formulario correctamente.</p>
+</div> -->
+
+<!-- Botón enviar -->
+<!-- <div class="formulario__grupo formulario__grupo--btn-enviar">
+    <button class="formulario__btn">Enviar</button>
+    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+</div> -->
