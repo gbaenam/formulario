@@ -19,8 +19,24 @@ p {
 
 .form {
 
+    // &__fielset {
+    //     display: grid;
+    //     row-gap: 10px;
+    //     // column-gap: 10px;
+    //     border-radius: 10px;
+    // }
+
+    &__label {
+        font-size: 14px;
+    }
+
+    // &__input-group {
+    //     background-color: pink;
+    // }
+
     &__text-area {
         resize: none;
+        // columns: 23;
     }
 }
 
