@@ -46,7 +46,7 @@
 
 
 	// Función confirmar correo.
-	const validarMail2 = elemento => {
+	const validarMail2 = () => {
 		const 	emailUno = document.getElementById('email'),
 				emailDos = document.getElementById('confirm-email')
 
