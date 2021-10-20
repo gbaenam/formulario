@@ -1,8 +1,7 @@
 // addEventListener('DOMContentLoaded', () => {
 
 	const   form = document.getElementById('form'),
-			inputs = document.querySelectorAll('.input'),
-			textArea = document.getElementById('text-area')
+			inputs = document.querySelectorAll('.input')
 
 	// Objeto Expresiones Regulares.
 	const er = {
@@ -69,12 +68,6 @@
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
 	}
-
-
-	// Evento text-area.
-	textArea.addEventListener('keyup', validarFormulario)
-	textArea.addEventListener('blur', validarFormulario)
-
 
 	// Evento inputs.
 	inputs.forEach(input => {
