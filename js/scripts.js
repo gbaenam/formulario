@@ -1,7 +1,8 @@
 // addEventListener('DOMContentLoaded', () => {
 
 	const   form = document.getElementById('form'),
-			inputs = document.querySelectorAll('.input')
+			inputs = document.querySelectorAll('.input'),
+			emailDos = document.getElementById('confirm-email')
 
 	// Objeto Expresiones Regulares.
 	const er = {
@@ -20,7 +21,6 @@
 
 	// Función validar formulario.
 	const validarFormulario = e => {
-		const mailDos = document.getElementById('confirm-email')
 
 		// Nombre
 		if (e.target.name === 'name') validarDatos(er.regExpName, e.target.value, e.target)
@@ -28,7 +28,7 @@
 		// Email
 		if (e.target.name === 'email') {
 			validarDatos(er.regExpMail, e.target.value, e.target)
-			validarMail2(mailDos)
+			validarMail2(emailDos)
 		}
 
 		// Confirm-Email
@@ -48,11 +48,10 @@
 
 	// Función confirmar correo.
 	const validarMail2 = elemento => {
-		const 	inputEmail = document.getElementById('email'),
-				inputEmail2 = document.getElementById('confirm-email')
+		const 	emailUno = document.getElementById('email')
 
-		if (inputEmail.value !== '') {
-			if (inputEmail.value === inputEmail2.value) changeClass(true, elemento)
+		if (emailUno.value !== '') {
+			if (emailUno.value === elemento.value) changeClass(true, elemento)
 			else changeClass(false, elemento)
 		} else changeClass(false, elemento)
 	}
@@ -68,6 +67,7 @@
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
 	}
+
 
 	// Evento inputs.
 	inputs.forEach(input => {
