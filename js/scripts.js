@@ -47,13 +47,9 @@
 	const validarDatos = (expresion, valor, elemento ) => {
 		if (elemento.name !== 'text-area') {
 			if (expresion.test(valor)) {
-				console.log('Ingreso correcto')
-				elemento.classList.remove('incorrecto')
-				elemento.classList.add('correcto')
+				changeClass(true, elemento)
 			} else {
-				console.log('Ingreso incorrecto')
-				elemento.classList.add('incorrecto')
-				elemento.classList.remove('correcto')
+				changeClass(false, elemento)
 			}
 		} else if (expresion.test(valor)) {
 			elemento.classList.remove('txarea-incorrecto')
@@ -64,11 +60,15 @@
 		}
 	}
 
-	const changeClass = () => {
-		if (valor) {
-
+	const changeClass = (condicion, elemento) => {
+		if (condicion) {
+			console.log('Ingreso correcto')
+			elemento.classList.remove('incorrecto')
+			elemento.classList.add('correcto')
 		} else {
-			
+			console.log('Ingreso incorrecto')
+			elemento.classList.add('incorrecto')
+			elemento.classList.remove('correcto')
 		}
 	}
 
