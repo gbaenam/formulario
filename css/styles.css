@@ -15,7 +15,8 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1280px; }
+  max-width: 1280px;
+  background-color: lightgrey; }
 
 .form {
   margin-left: auto;
@@ -36,10 +37,30 @@ p {
     margin-bottom: 8px; }
   .form__input {
     height: 40px;
-    font-size: 18px; }
+    font-size: 18px;
+    border: 3px solid transparent; }
+    .form__input:focus {
+      outline: none;
+      border-color: blue; }
   .form__input, .form__text-area {
     width: 100%;
     margin-bottom: 20px; }
   .form__text-area {
     resize: none;
-    min-height: 150px; }
+    min-height: 150px;
+    border: 3px solid transparent; }
+    .form__text-area:focus {
+      outline: none;
+      border-color: blue; }
+
+.correcto.form__input {
+  border: 3px solid #1ed12d; }
+
+.incorrecto.form__input {
+  border: 3px solid red; }
+
+.txarea-correcto.form__text-area {
+  border: 3px solid #1ed12d; }
+
+.txarea-incorrecto.form__text-area {
+  border: 3px solid red; }

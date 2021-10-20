@@ -5,54 +5,90 @@
 			textArea = document.getElementById('text-area')
 
 	const er = {
-		nombre: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
-		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-		mensaje: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
+		regExpName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
+		regExpMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		regExpMessage: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
+	}
+
+	const validarCampo = {
+		nameField: false,
+		mailField: false,
+		messageField: false
 	}
 
 
 	const validarFormulario = e => {
+		const mailDos = document.getElementById('confirm-email')
 
 		// Nombre
 		if (e.target.name === 'name') {
-			validarDatos(er.nombre, e.target.value)
+			validarDatos(er.regExpName, e.target.value, e.target)
+			// console.log(e.target)
 		}
 
 		// Email
 		if (e.target.name === 'email') {
-			validarDatos(er.correo, e.target.value)
+			validarDatos(er.regExpMail, e.target.value, e.target)
+			validarMail2(mailDos)
 		}
 
 		// Confirm-Email
 		if (e.target.name === 'confirm-email') {
-			validarMail2()
+			validarMail2(e.target)
 		}
 
 		// Mensaje
 		if (e.target.name === 'text-area') {
-			validarDatos(er.mensaje, e.target.value)
+			validarDatos(er.regExpMessage, e.target.value, e.target)
 		}
 	}
 
 
-	const validarDatos = (expresion, valor) => {
-		if (expresion.test(valor)) {
-			console.log('Ingreso correcto')
+	const validarDatos = (expresion, valor, elemento ) => {
+		if (elemento.name !== 'text-area') {
+			if (expresion.test(valor)) {
+				console.log('Ingreso correcto')
+				elemento.classList.remove('incorrecto')
+				elemento.classList.add('correcto')
+			} else {
+				console.log('Ingreso incorrecto')
+				elemento.classList.add('incorrecto')
+				elemento.classList.remove('correcto')
+			}
+		} else if (expresion.test(valor)) {
+			elemento.classList.remove('txarea-incorrecto')
+			elemento.classList.add('txarea-correcto')
 		} else {
-			console.log('Ingreso incorrecto')
+			elemento.classList.add('txarea-incorrecto')
+			elemento.classList.remove('txarea-correcto')
+		}
+	}
+
+	const changeClass = () => {
+		if (valor) {
+
+		} else {
+			
 		}
 	}
 
 
-	const validarMail2 = () => {
-
+	const validarMail2 = elemento => {
 		const 	inputEmail = document.getElementById('email'),
 				inputEmail2 = document.getElementById('confirm-email')
 
-		if (inputEmail.value !== inputEmail2.value) {
-			console.log('Los Email no coinciden')
+		if (inputEmail.value !== '') {
+			if (inputEmail.value === inputEmail2.value) {
+				console.log('Los Email coinciden')
+				elemento.classList.remove('incorrecto')
+				elemento.classList.add('correcto')
+			} else {
+				console.log('Los Email no son iguales')
+				elemento.classList.add('incorrecto')
+				elemento.classList.remove('correcto')
+			}
 		} else {
-			console.log('Los Email son iguales')
+			elemento.classList.add('incorrecto')
 		}
 	}
 
@@ -63,43 +99,3 @@
 		input.addEventListener('keyup', validarFormulario)
 		input.addEventListener('blur', validarFormulario)
 	})
-
-
-
-	// const validarCampo = e => {
-	// 	console.log(e.target.name)
-	// }
-
-
-	// switch (e.target.name) {
-	// 	case 'usuario':
-	// 		validarCampo(expresiones.usuario, e.target, 'usuario')
-	// 	break;
-	// 	case 'nombre':
-	// 		validarCampo(expresiones.nombre, e.target, 'nombre')
-	// 	break;
-	// 	case 'password':
-	// 		validarCampo(expresiones.password, e.target, 'password')
-	// 		validarPassword2()
-	// 	break;
-	// 	case 'password2':
-	// 		validarPassword2()
-	// 	break;
-	// 	case 'correo':
-	// 		validarCampo(expresiones.correo, e.target, 'correo')
-	// 	break;
-	// 	case 'telefono':
-	// 		validarCampo(expresiones.telefono, e.target, 'telefono')
-	// 	break;
-	// }
-
-// })
-
-// Email
-// if (e.target.name === 'email') {
-// 	if (er.correo.test(e.target.value)) {
-// 		console.log('Ingreso correcto')
-// 	} else {
-// 		console.log('Ingreso incorrecto')
-// 	}
-// }
