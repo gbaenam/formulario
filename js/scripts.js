@@ -52,11 +52,9 @@
 				changeClass(false, elemento)
 			}
 		} else if (expresion.test(valor)) {
-			elemento.classList.remove('txarea-incorrecto')
-			elemento.classList.add('txarea-correcto')
+			changeClass(true, elemento)
 		} else {
-			elemento.classList.add('txarea-incorrecto')
-			elemento.classList.remove('txarea-correcto')
+			changeClass(false, elemento)
 		}
 	}
 
@@ -72,17 +70,17 @@
 				changeClass(false, elemento)
 			}
 		} else {
-			elemento.classList.add('incorrecto')
+			changeClass(false, elemento)
 		}
 	}
 
 	const changeClass = (condicion, elemento) => {
 		if (condicion) {
-			elemento.classList.remove('incorrecto')
-			elemento.classList.add('correcto')
+			elemento.classList.remove('incorrecto', 'txarea-incorrecto')
+			elemento.classList.add('correcto', 'txarea-correcto')
 		} else {
-			elemento.classList.add('incorrecto')
-			elemento.classList.remove('correcto')
+			elemento.classList.add('incorrecto', 'txarea-incorrecto')
+			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
 	}
 
