@@ -60,18 +60,6 @@
 		}
 	}
 
-	const changeClass = (condicion, elemento) => {
-		if (condicion) {
-			console.log('Ingreso correcto')
-			elemento.classList.remove('incorrecto')
-			elemento.classList.add('correcto')
-		} else {
-			console.log('Ingreso incorrecto')
-			elemento.classList.add('incorrecto')
-			elemento.classList.remove('correcto')
-		}
-	}
-
 
 	const validarMail2 = elemento => {
 		const 	inputEmail = document.getElementById('email'),
@@ -79,16 +67,22 @@
 
 		if (inputEmail.value !== '') {
 			if (inputEmail.value === inputEmail2.value) {
-				console.log('Los Email coinciden')
-				elemento.classList.remove('incorrecto')
-				elemento.classList.add('correcto')
+				changeClass(true, elemento)
 			} else {
-				console.log('Los Email no son iguales')
-				elemento.classList.add('incorrecto')
-				elemento.classList.remove('correcto')
+				changeClass(false, elemento)
 			}
 		} else {
 			elemento.classList.add('incorrecto')
+		}
+	}
+
+	const changeClass = (condicion, elemento) => {
+		if (condicion) {
+			elemento.classList.remove('incorrecto')
+			elemento.classList.add('correcto')
+		} else {
+			elemento.classList.add('incorrecto')
+			elemento.classList.remove('correcto')
 		}
 	}
 
