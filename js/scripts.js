@@ -5,9 +5,9 @@
 
 	// Objeto Expresiones Regulares.
 	const er = {
-		regExpName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
-		regExpMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-		regExpMessage: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
+		erName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
+		erMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		erMessage: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
 	}
 
 	// Objeto validar campos.
@@ -22,11 +22,11 @@
 	const validarFormulario = e => {
 
 		// Nombre
-		if (e.target.name === 'name') validarDatos(er.regExpName, e.target.value, e.target)
+		if (e.target.name === 'name') validarDatos(er.erName, e.target.value, e.target)
 
 		// Email
 		if (e.target.name === 'email') {
-			validarDatos(er.regExpMail, e.target.value, e.target)
+			validarDatos(er.erMail, e.target.value, e.target)
 			validarMail2()
 		}
 
@@ -34,7 +34,7 @@
 		if (e.target.name === 'confirm-email') validarMail2(e.target)
 
 		// Mensaje
-		if (e.target.name === 'text-area') validarDatos(er.regExpMessage, e.target.value, e.target)
+		if (e.target.name === 'text-area') validarDatos(er.erMessage, e.target.value, e.target)
 	}
 
 
