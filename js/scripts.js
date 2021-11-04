@@ -17,6 +17,13 @@
 		messageField: false
 	}
 
+	// Objeto mensajes de error.
+	const errorMessage = {
+		nameError: 'Solamente letras mayúsculas y minúsculas',
+		emailError: 'Ingrese un formato de correo válido',
+		email2Error: 'Los correos no son iguales'
+	}
+
 
 	// Función validar formulario.
 	const validarFormulario = e => {
