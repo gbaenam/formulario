@@ -48,7 +48,10 @@
 	// Función validar datos.
 	const validarDatos = (expresion, valor, elemento ) => {
 			if (expresion.test(valor)) changeClass(true, elemento)
-			else changeClass(false, elemento)
+			else {
+				changeClass(false, elemento)
+				showError()
+			}
 	}
 
 
@@ -73,6 +76,10 @@
 			elemento.classList.add('incorrecto', 'txarea-incorrecto')
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
+	}
+
+	const showError = () => {
+		
 	}
 
 
