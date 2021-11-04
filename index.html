@@ -10,49 +10,47 @@
 </head>
 <body>
     <div class="container">
-        <form action="" autocomplete="off" class="form" id="form">
+        <form action="" autocomplete="on" class="form" id="form">
             <fieldset class="form__fielset">
                 <legend class="form__legent">Formulario de Cont&aacute;cto</legend>
 
-                    <!-- Nombre -->
+                <!-- Nombre -->
+                <div class="form__box">
                     <label for="name" class="form__label">Nombre</label>
-                    <div class="form__input-group">
-                        <p></p>
-                        <input type="text" name="name" class="form__input input" id="name">
-                    </div>
+                    <p></p>
+                    <input type="text" name="name" class="form__input input" id="name">
+                </div>
 
-                    <!-- Correo electrónico. -->
+                <!-- Correo electrónico. -->
+                <div class="form__box">
                     <label for="email" class="form__label">Correo Electr&oacute;nico</label>
-                    <div class="form__input-group">
-                        <p></p>
-                        <input type="email" name="email" class="form__input input" id="email">
-                    </div>
+                    <p></p>
+                    <input type="email" name="email" class="form__input input" id="email">
+                </div>
 
-                    <!-- Correo electrónico confirmar. -->
+                <!-- Correo electrónico confirmar. -->
+                <div class="form__box">
                     <label for="confirm-email" class="form__label">Confirmar Correo Electr&oacute;nico</label>
-                    <div class="form__input-group">
-                        <p></p>
-                        <input type="email" name="confirm-email" class="form__input input" id="confirm-email">
-                    </div>
+                    <p></p>
+                    <input type="email" name="confirm-email" class="form__input input" id="confirm-email">
+                </div>
 
-                    <!-- Mensaje. -->
+                <!-- Mensaje. -->
+                <div class="form__box">
                     <label for="text-area" class="form__label">D&eacute;janos tu mensaje</label>
-                    <div class="form__input-group">
-                        <p></p>
-                        <textarea name="text-area" class="form__text-area input" id="text-area"></textarea>
-                    </div>
+                    <p></p>
+                    <textarea name="text-area" class="form__text-area input" id="text-area"></textarea>
+                </div>
 
-                    <!-- Términos y condiciones. -->
+                <!-- Términos y condiciones. -->
+                <div class="form__box">
                     <input type="checkbox" name="checkbox" class="form__input-terminos input" id="terminos">
                     <label for="terminos" class="form__label">Acepto T&eacute;rminos y Condiciones</label>
+                </div>
 
-                    <!-- Mensaje de error. -->
-                    <p></p>
-
-                    <!-- Botón enviar -->
-                    <button type="submit" disabled class="form__button" id="button">Enviar</button>
             </fieldset>
-
+            <!-- Botón enviar -->
+            <button type="submit" class="form__button" id="button">Enviar</button>
 
         </form>
     </div>

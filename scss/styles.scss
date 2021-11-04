@@ -40,36 +40,48 @@ button {
     margin-right: auto;
     max-width: 540px;
 
+    display: flex;
+    flex-direction: column;
+
+    // background-color: pink;
+
 
     &__fielset {
-        border: none;
         padding: 0;
+        border: none;
     }
+
 
     &__legent {
         background-color: lightsalmon;
         font-size: 30px;
-        // display: block;
         text-align: center;
         margin-bottom: 10px;
 
         width: 100%;
     }
 
-    &__label {
-        font-size: 14px;
-        display: inline-block;
-        margin-bottom: 8px;
+    &__box {
+        margin-bottom: 20px;
+
+        // background-color: pink;
     }
 
-    // &__input-group {
-        //     background-color: pink;
-        // }
+    &__box:last-child {
+        margin-bottom: 40px;
+    }
+
+    &__label {
+        font-size: 14px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+
 
     &__input {
-        height: 40px;
+        // height: 40px;
         font-size: 18px;
-        border: 3px solid transparent;
+        border: 2px solid transparent;
 
         &:focus {
             border-color: blue;
@@ -77,16 +89,10 @@ button {
     }
 
 
-    &__input,
-    &__text-area {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
     &__text-area {
         resize: none;
         min-height: 150px;
-        border: 3px solid transparent;
+        border: 2px solid transparent;
 
         &:focus {
             outline: none;
@@ -94,13 +100,24 @@ button {
         }
     }
 
+    &__input,
+    &__text-area {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+
     // &__input-terminos {
 
     // }
 
-    // &__button {
-
-    // }
+    &__button {
+        width: 50%;
+        align-self: center;
+        padding: 10px;
+        // border-radius: 15px;
+    }
 }
 
 
@@ -108,19 +125,19 @@ button {
 // Estilos para validación.
 
 .correcto.form__input {
-    border: 3px solid #1ed12d;
+    border: 2px solid #1ed12d;
 }
 
 .incorrecto.form__input {
-    border: 3px solid red;
+    border: 2px solid red;
 }
 
 .txarea-correcto.form__text-area {
-    border: 3px solid #1ed12d;
+    border: 2px solid #1ed12d;
 }
 
 .txarea-incorrecto.form__text-area {
-    border: 3px solid red;
+    border: 2px solid red;
 }
 
 

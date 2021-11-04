@@ -28,45 +28,55 @@ button {
 .form {
   margin-left: auto;
   margin-right: auto;
-  max-width: 540px; }
+  max-width: 540px;
+  display: flex;
+  flex-direction: column; }
   .form__fielset {
-    border: none;
-    padding: 0; }
+    padding: 0;
+    border: none; }
   .form__legent {
     background-color: lightsalmon;
     font-size: 30px;
     text-align: center;
     margin-bottom: 10px;
     width: 100%; }
+  .form__box {
+    margin-bottom: 20px; }
+  .form__box:last-child {
+    margin-bottom: 40px; }
   .form__label {
     font-size: 14px;
-    display: inline-block;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    display: inline-block; }
   .form__input {
-    height: 40px;
     font-size: 18px;
-    border: 3px solid transparent; }
+    border: 2px solid transparent; }
     .form__input:focus {
       border-color: blue; }
-  .form__input, .form__text-area {
-    width: 100%;
-    margin-bottom: 20px; }
   .form__text-area {
     resize: none;
     min-height: 150px;
-    border: 3px solid transparent; }
+    border: 2px solid transparent; }
     .form__text-area:focus {
       outline: none;
       border-color: blue; }
+  .form__input, .form__text-area {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px; }
+  .form__button {
+    width: 50%;
+    align-self: center;
+    padding: 10px; }
 
 .correcto.form__input {
-  border: 3px solid #1ed12d; }
+  border: 2px solid #1ed12d; }
 
 .incorrecto.form__input {
-  border: 3px solid red; }
+  border: 2px solid red; }
 
 .txarea-correcto.form__text-area {
-  border: 3px solid #1ed12d; }
+  border: 2px solid #1ed12d; }
 
 .txarea-incorrecto.form__text-area {
-  border: 3px solid red; }
+  border: 2px solid red; }
