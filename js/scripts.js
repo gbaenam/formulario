@@ -79,24 +79,17 @@
 		}
 	}
 
+
+	// Función mostrar error.
 	const showError = (elemento, message) => {
-		if (elemento.name === 'name') {
-			message.innerText = errorMessage.nameError
-		}
+		if (elemento.name === 'name') message.innerText = errorMessage.nameError
 
-		else if (elemento.name === 'email') {
-			message.innerText = errorMessage.emailError
-		}
+		else if (elemento.name === 'email') message.innerText = errorMessage.emailError
 
-		else if (elemento.name === 'confirm-email') {
-			if (emailUno.value !== '') {
-				message.innerText = errorMessage.email2Error
-			}
-		}
+		else if (elemento.name === 'confirm-email')
+			if (emailUno.value !== '') message.innerText = errorMessage.email2Error
 
-		else if (elemento.name === 'text-area') {
-			message.innerText = errorMessage.txareaError
-		}
+		else if (elemento.name === 'text-area') message.innerText = errorMessage.txareaError
 	}
 
 
