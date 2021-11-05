@@ -69,7 +69,7 @@
 		const 	formBox = elemento.parentElement,
 				message = formBox.querySelector('p')
 		if (condicion) {
-			removeError(message)
+			message.innerText = ''
 			elemento.classList.remove('incorrecto', 'txarea-incorrecto')
 			elemento.classList.add('correcto', 'txarea-correcto')
 		} else {
@@ -97,11 +97,6 @@
 		else if (elemento.name === 'text-area') {
 			message.innerText = errorMessage.txareaError
 		}
-	}
-
-
-	const removeError = message => {
-		message.innerText = ''
 	}
 
 
