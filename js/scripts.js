@@ -48,14 +48,8 @@
 
 	// Función validar datos.
 	const validarDatos = (expresion, valor, elemento ) => {
-			if (expresion.test(valor)) {
-				changeClass(true, elemento)
-				removeError(elemento)
-			}
-			else {
-				changeClass(false, elemento)
-				showError(elemento)
-			}
+			if (expresion.test(valor)) changeClass(true, elemento)
+			else changeClass(false, elemento)
 	}
 
 
@@ -65,32 +59,28 @@
 				emailDos = document.getElementById('confirm-email')
 
 		if (emailUno.value !== '') {
-			if (emailUno.value === emailDos.value) {
-				changeClass(true, emailDos)
-				removeError(emailDos)
-			}
-			else {
-				changeClass(false, emailDos)
-				showError(emailDos)
-			}
+			if (emailUno.value === emailDos.value) changeClass(true, emailDos)
+			else changeClass(false, emailDos)
 		} else changeClass(false, emailDos)
 	}
 
 
 	// Función añadir o quitar clases.
 	const changeClass = (condicion, elemento) => {
+		const 	formBox = elemento.parentElement,
+				message = formBox.querySelector('p')
 		if (condicion) {
+			removeError(message)
 			elemento.classList.remove('incorrecto', 'txarea-incorrecto')
 			elemento.classList.add('correcto', 'txarea-correcto')
 		} else {
+			showError(elemento, message)
 			elemento.classList.add('incorrecto', 'txarea-incorrecto')
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
 	}
 
-	const showError = elemento => {
-		const 	formBox = elemento.parentElement,
-				message = formBox.querySelector('p')
+	const showError = (elemento, message) => {
 		if (elemento.name === 'name') {
 			message.innerText = errorMessage.nameError
 		}
@@ -108,10 +98,9 @@
 		}
 	}
 
-	const removeError = elemento => {
-		const 	formBox = elemento.parentElement,
-				message = formBox.querySelector('p')
-				message.innerText = ''
+
+	const removeError = message => {
+		message.innerText = ''
 	}
 
 
