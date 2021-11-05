@@ -1,7 +1,9 @@
 // addEventListener('DOMContentLoaded', () => {
 
 	const   form = document.getElementById('form'),
-			inputs = document.querySelectorAll('.input')
+			inputs = document.querySelectorAll('.input'),
+			emailUno = document.getElementById('email'),
+			emailDos = document.getElementById('confirm-email')
 
 	// Objeto Expresiones Regulares.
 	const er = {
@@ -55,9 +57,6 @@
 
 	// Función confirmar correo.
 	const validarMail2 = () => {
-		const 	emailUno = document.getElementById('email'),
-				emailDos = document.getElementById('confirm-email')
-
 		if (emailUno.value !== '') {
 			if (emailUno.value === emailDos.value) changeClass(true, emailDos)
 			else changeClass(false, emailDos)
@@ -90,7 +89,9 @@
 		}
 
 		else if (elemento.name === 'confirm-email') {
-			message.innerText = errorMessage.email2Error
+			if (emailUno.value !== '') {
+				message.innerText = errorMessage.email2Error
+			}
 		}
 
 		else if (elemento.name === 'text-area') {
