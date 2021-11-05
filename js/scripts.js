@@ -19,9 +19,10 @@
 
 	// Objeto mensajes de error.
 	const errorMessage = {
-		nameError: 'Solamente letras mayúsculas y minúsculas',
+		nameError: 'Ingrese únicamente letras mayúsculas y minúsculas',
 		emailError: 'Ingrese un formato de correo válido',
-		email2Error: 'Los correos no son iguales'
+		email2Error: 'Los correos no son iguales',
+		txareaError: 'Máximo 160 caracteres'
 	}
 
 
@@ -38,7 +39,7 @@
 		}
 
 		// Confirm-Email
-		if (e.target.name === 'confirm-email') validarMail2(e.target)
+		if (e.target.name === 'confirm-email') validarMail2()
 
 		// Mensaje
 		if (e.target.name === 'text-area') validarDatos(er.erMessage, e.target.value, e.target)
@@ -47,10 +48,13 @@
 
 	// Función validar datos.
 	const validarDatos = (expresion, valor, elemento ) => {
-			if (expresion.test(valor)) changeClass(true, elemento)
+			if (expresion.test(valor)) {
+				changeClass(true, elemento)
+				removeError(elemento)
+			}
 			else {
 				changeClass(false, elemento)
-				showError()
+				showError(elemento)
 			}
 	}
 
@@ -61,8 +65,14 @@
 				emailDos = document.getElementById('confirm-email')
 
 		if (emailUno.value !== '') {
-			if (emailUno.value === emailDos.value) changeClass(true, emailDos)
-			else changeClass(false, emailDos)
+			if (emailUno.value === emailDos.value) {
+				changeClass(true, emailDos)
+				removeError(emailDos)
+			}
+			else {
+				changeClass(false, emailDos)
+				showError(emailDos)
+			}
 		} else changeClass(false, emailDos)
 	}
 
@@ -78,8 +88,30 @@
 		}
 	}
 
-	const showError = () => {
-		
+	const showError = elemento => {
+		const 	formBox = elemento.parentElement,
+				message = formBox.querySelector('p')
+		if (elemento.name === 'name') {
+			message.innerText = errorMessage.nameError
+		}
+
+		else if (elemento.name === 'email') {
+			message.innerText = errorMessage.emailError
+		}
+
+		else if (elemento.name === 'confirm-email') {
+			message.innerText = errorMessage.email2Error
+		}
+
+		else if (elemento.name === 'text-area') {
+			message.innerText = errorMessage.txareaError
+		}
+	}
+
+	const removeError = elemento => {
+		const 	formBox = elemento.parentElement,
+				message = formBox.querySelector('p')
+				message.innerText = ''
 	}
 
 
@@ -88,3 +120,5 @@
 		input.addEventListener('keyup', validarFormulario)
 		input.addEventListener('blur', validarFormulario)
 	})
+
+
