@@ -3,7 +3,8 @@
 	const   form = document.getElementById('form'),
 			inputs = document.querySelectorAll('.input'),
 			emailUno = document.getElementById('email'),
-			emailDos = document.getElementById('checkmail')
+			emailDos = document.getElementById('checkmail'),
+			submitButton= document.getElementById('submit-button')
 
 	// Objeto Expresiones Regulares.
 	const er = {
@@ -18,7 +19,6 @@
 		email: false,
 		checkmail: false,
 		textarea: false
-		// checkbox: false
 	}
 
 	// Objeto mensajes de error.
@@ -52,9 +52,9 @@
 
 	// Función validar datos.
 	const validarDatos = (expresion, valor, elemento ) => {
-			if (expresion.test(valor)) changeState(true, elemento)
+		if (expresion.test(valor)) changeState(true, elemento)
 			else changeState(false, elemento)
-	}
+		}
 
 
 	// Función confirmar correo.
@@ -73,13 +73,11 @@
 		if (condicion) {
 			message.innerText = ''
 			checkInput[elemento.name] = true
-			console.log(checkInput[elemento.name])
 			elemento.classList.remove('incorrecto', 'txarea-incorrecto')
 			elemento.classList.add('correcto', 'txarea-correcto')
 		} else {
 			showError(elemento, message)
 			checkInput[elemento.name] = false
-			console.log(checkInput[elemento.name])
 			elemento.classList.add('incorrecto', 'txarea-incorrecto')
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
@@ -100,6 +98,12 @@
 	}
 
 
+	// Función controlar botón de envío.
+	const submitController = () => {
+		console.log('submitController es', checkInput)
+	}
+
+
 	// Evento inputs.
 	inputs.forEach(input => {
 		input.addEventListener('keyup', validarFormulario)
@@ -108,22 +112,7 @@
 
 
 
-	// campos[campo] = true
-
-
-	// const showError = (check, box, boxInput) => {
-    //     if (check) {
-    //         box.classList.remove('form-success')
-    //         box.classList.add('form-error')
-    //         errors[boxInput.name] = true
-    //     } else {
-    //         box.classList.add('form-success')
-    //         box.classList.remove('form-error')
-    //         errors[boxInput.name] = false
-    //     }
-    // }
-
-    // const submitController = () => {
+	// const submitController = () => {
     //     console.log('submitController es', errors)
     //     if (errors.nickName || errors.email || errors.password) {
     //         submitButton.toggleAttribute('disabled', true)
@@ -131,3 +120,4 @@
     //         submitButton.toggleAttribute('disabled', false)
     //     }
     // }
+
