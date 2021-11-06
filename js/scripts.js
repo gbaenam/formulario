@@ -3,20 +3,22 @@
 	const   form = document.getElementById('form'),
 			inputs = document.querySelectorAll('.input'),
 			emailUno = document.getElementById('email'),
-			emailDos = document.getElementById('confirm-email')
+			emailDos = document.getElementById('checkmail')
 
 	// Objeto Expresiones Regulares.
 	const er = {
 		erName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
-		erMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-		erMessage: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
+		erEmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		erTextArea: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
 	}
 
 	// Objeto validar campos.
-	const validarCampo = {
-		nameField: false,
-		mailField: false,
-		messageField: false
+	const checkInput = {
+		name: false,
+		email: false,
+		checkmail: false,
+		textarea: false
+		// checkbox: false
 	}
 
 	// Objeto mensajes de error.
@@ -36,15 +38,15 @@
 
 		// Email
 		if (e.target.name === 'email') {
-			validarDatos(er.erMail, e.target.value, e.target)
+			validarDatos(er.erEmail, e.target.value, e.target)
 			validarMail2()
 		}
 
 		// Confirm-Email
-		if (e.target.name === 'confirm-email') validarMail2()
+		if (e.target.name === 'checkmail') validarMail2()
 
 		// Mensaje
-		if (e.target.name === 'text-area') validarDatos(er.erMessage, e.target.value, e.target)
+		if (e.target.name === 'textarea') validarDatos(er.erTextArea, e.target.value, e.target)
 	}
 
 
@@ -64,16 +66,20 @@
 	}
 
 
-	// Función añadir o quitar clases.
+	// Función cambiar de estado.
 	const changeState = (condicion, elemento) => {
 		const 	formBox = elemento.parentElement,
 				message = formBox.querySelector('p')
 		if (condicion) {
 			message.innerText = ''
+			checkInput[elemento.name] = true
+			console.log(checkInput[elemento.name])
 			elemento.classList.remove('incorrecto', 'txarea-incorrecto')
 			elemento.classList.add('correcto', 'txarea-correcto')
 		} else {
 			showError(elemento, message)
+			checkInput[elemento.name] = false
+			console.log(checkInput[elemento.name])
 			elemento.classList.add('incorrecto', 'txarea-incorrecto')
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
@@ -86,11 +92,11 @@
 
 		else if (elemento.name === 'email') message.innerText = errorMessage.emailError
 
-		else if (elemento.name === 'confirm-email') {
+		else if (elemento.name === 'checkmail') {
 			if (emailUno.value !== '') message.innerText = errorMessage.email2Error
 		}
 
-		else if (elemento.name === 'text-area') message.innerText = errorMessage.txareaError
+		else if (elemento.name === 'textarea') message.innerText = errorMessage.txareaError
 	}
 
 
@@ -101,3 +107,27 @@
 	})
 
 
+
+	// campos[campo] = true
+
+
+	// const showError = (check, box, boxInput) => {
+    //     if (check) {
+    //         box.classList.remove('form-success')
+    //         box.classList.add('form-error')
+    //         errors[boxInput.name] = true
+    //     } else {
+    //         box.classList.add('form-success')
+    //         box.classList.remove('form-error')
+    //         errors[boxInput.name] = false
+    //     }
+    // }
+
+    // const submitController = () => {
+    //     console.log('submitController es', errors)
+    //     if (errors.nickName || errors.email || errors.password) {
+    //         submitButton.toggleAttribute('disabled', true)
+    //     } else {
+    //         submitButton.toggleAttribute('disabled', false)
+    //     }
+    // }
