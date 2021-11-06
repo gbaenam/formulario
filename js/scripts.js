@@ -68,8 +68,8 @@ const validarMail2 = () => {
 
 // Función cambiar de estado.
 const changeState = (condicion, elemento) => {
-	const formBox = elemento.parentElement,
-		message = formBox.querySelector('p')
+	const	formBox = elemento.parentElement,
+			message = formBox.querySelector('p')
 	if (condicion) {
 		message.innerText = ''
 		checkInput[elemento.name] = true
@@ -99,7 +99,9 @@ const showError = (elemento, message) => {
 
 // Función controlar botón de envío.
 const submitController = () => {
-	console.log('submitController es', checkInput)
+	// console.log('submitController es', checkInput)
+	if (checkInput.name && checkInput.email && checkInput.checkmail && checkInput.textarea) submitButton.toggleAttribute('disabled', false)
+	else submitButton.toggleAttribute('disabled', true)
 }
 
 
@@ -109,13 +111,3 @@ inputs.forEach(input => {
 	input.addEventListener('blur', validarFormulario)
 })
 
-
-
-// const submitController = () => {
-//     console.log('submitController es', errors)
-//     if (errors.nickName || errors.email || errors.password) {
-//         submitButton.toggleAttribute('disabled', true)
-//     } else {
-//         submitButton.toggleAttribute('disabled', false)
-//     }
-// }
