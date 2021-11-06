@@ -4,6 +4,7 @@ const form = document.getElementById('form'),
 	inputs = document.querySelectorAll('.input'),
 	emailUno = document.getElementById('email'),
 	emailDos = document.getElementById('checkmail'),
+	terminos = document.getElementById('terminos'),
 	submitButton = document.getElementById('submit-button')
 
 // Objeto Expresiones Regulares.
@@ -100,9 +101,13 @@ const showError = (elemento, message) => {
 // Función controlar botón de envío.
 const submitController = () => {
 	// console.log('submitController es', checkInput)
-	if (checkInput.name && checkInput.email && checkInput.checkmail && checkInput.textarea) submitButton.toggleAttribute('disabled', false)
+	if (checkInput.name && checkInput.email && checkInput.checkmail && checkInput.textarea && terminos.checked) submitButton.toggleAttribute('disabled', false)
 	else submitButton.toggleAttribute('disabled', true)
 }
+
+
+// Evento checkbox.
+terminos.addEventListener('click', submitController)
 
 
 // Evento inputs.
@@ -110,4 +115,5 @@ inputs.forEach(input => {
 	input.addEventListener('keyup', validarFormulario)
 	input.addEventListener('blur', validarFormulario)
 })
+
 
