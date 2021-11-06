@@ -50,22 +50,22 @@
 
 	// Función validar datos.
 	const validarDatos = (expresion, valor, elemento ) => {
-			if (expresion.test(valor)) changeClass(true, elemento)
-			else changeClass(false, elemento)
+			if (expresion.test(valor)) changeState(true, elemento)
+			else changeState(false, elemento)
 	}
 
 
 	// Función confirmar correo.
 	const validarMail2 = () => {
 		if (emailUno.value !== '') {
-			if (emailUno.value === emailDos.value) changeClass(true, emailDos)
-			else changeClass(false, emailDos)
-		} else changeClass(false, emailDos)
+			if (emailUno.value === emailDos.value) changeState(true, emailDos)
+			else changeState(false, emailDos)
+		} else changeState(false, emailDos)
 	}
 
 
 	// Función añadir o quitar clases.
-	const changeClass = (condicion, elemento) => {
+	const changeState = (condicion, elemento) => {
 		const 	formBox = elemento.parentElement,
 				message = formBox.querySelector('p')
 		if (condicion) {
