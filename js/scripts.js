@@ -54,14 +54,14 @@
 	const validarDatos = (expresion, valor, elemento ) => {
 		if (expresion.test(valor)) changeState(true, elemento)
 			else changeState(false, elemento)
-		}
+	}
 
 
 	// Función confirmar correo.
 	const validarMail2 = () => {
 		if (emailUno.value !== '') {
 			if (emailUno.value === emailDos.value) changeState(true, emailDos)
-			else changeState(false, emailDos)
+				else changeState(false, emailDos)
 		} else changeState(false, emailDos)
 	}
 
@@ -81,6 +81,7 @@
 			elemento.classList.add('incorrecto', 'txarea-incorrecto')
 			elemento.classList.remove('correcto', 'txarea-correcto')
 		}
+		submitController()
 	}
 
 
