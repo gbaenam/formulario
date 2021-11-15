@@ -64,6 +64,10 @@ button {
     width: 100%;
     padding: 10px;
     border-radius: 8px; }
+  .form__input-terminos {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; }
   .form__button {
     width: 50%;
     align-self: center;
