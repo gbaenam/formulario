@@ -10,7 +10,7 @@ const form = document.getElementById('form'),
 // Objeto Expresiones Regulares.
 const er = {
 	erName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+)([\s][A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+)?$/,
-	erEmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	erEmail: /^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/,
 	erTextArea: /^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
 }
 
