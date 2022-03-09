@@ -11,7 +11,7 @@ const form = document.getElementById('form'),
 const er = {
 	erName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+)([\s][A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+)?$/,
 	erEmail: /^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/,
-	erTextArea: /^[a-zñáéíóúA-ZÁÉÍÓÚ0-9?$@#()'!,+\-=_:.&€£*%\s]+$/
+	erTextArea: /^[a-zñáéíóúA-ZÁÉÍÓÚ0-9¿?$@#()'!¡,;\-_:.&€£*%\s]+$/
 }
 
 // Objeto validar campos.
@@ -27,7 +27,7 @@ const errorMessage = {
 	nameError: 'Ingrese únicamente letras mayúsculas y minúsculas',
 	emailError: 'Ingrese un formato de correo válido',
 	email2Error: 'Los correos no son iguales',
-	txareaError: 'Máximo 160 caracteres'
+	txareaError: 'Máximo 300 caracteres, no incluya [ ] { } / = ¬ + ç ~ |'
 }
 
 
@@ -47,7 +47,11 @@ const validarFormulario = e => {
 	if (e.target.name === 'checkmail') validarMail2()
 
 	// Mensaje
-	if (e.target.name === 'textarea') validarDatos(er.erTextArea, e.target.value, e.target)
+	if (e.target.name === 'textarea') {
+		const maxText = e.target.value.trim()
+		if (maxText.length <= 300) validarDatos(er.erTextArea, e.target.value, e.target)
+		else changeState(false, e.target)
+	}
 }
 
 
@@ -69,8 +73,8 @@ const validarMail2 = () => {
 
 // Función cambiar de estado.
 const changeState = (condicion, elemento) => {
-	const	formBox = elemento.parentElement,
-			message = formBox.querySelector('p')
+	const formBox = elemento.parentElement,
+		message = formBox.querySelector('p')
 	if (condicion) {
 		message.innerText = ''
 		checkInput[elemento.name] = true
