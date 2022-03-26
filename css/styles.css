@@ -73,6 +73,39 @@ button {
     align-self: center;
     padding: 10px; }
 
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .modal__content {
+    width: 90%;
+    height: 250px;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; }
+  .modal__confirmation {
+    margin-top: 0;
+    background-color: #00a135;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px; }
+  .modal__message {
+    margin-bottom: 3rem; }
+  .modal__close {
+    padding: 7px 60px;
+    color: white;
+    background-color: #0a0a0a; }
+
 .correcto.form__input {
   border: 2px solid #1ed12d; }
 

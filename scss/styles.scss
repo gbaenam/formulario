@@ -128,6 +128,55 @@ button {
     }
 }
 
+.modal {
+    // Estilos de modal
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    position: fixed;
+    // visibility: hidden;
+    background-color: rgba(0,0,0,.7);
+
+    // Centrado de modal__content
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content {
+        width: 90%;
+        height: 250px;
+        border-radius: 20px;
+        background-color: #fff;
+
+        // Centrado del contenido
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__confirmation {
+        margin-top: 0;
+        background-color: #00a135;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    &__message {
+        margin-bottom: 3rem;
+    }
+
+    &__close {
+        padding: 7px 60px;
+        color: white;
+        background-color: #0a0a0a;
+    }
+
+}
+
 
 
 // Estilos para validación del formulario.
