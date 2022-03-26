@@ -104,23 +104,22 @@ const showError = (elemento, message) => {
 
 // Función controlar botón de envío.
 const submitController = () => {
-	// console.log('submitController es', checkInput)
 	if (checkInput.name && checkInput.email && checkInput.checkmail && checkInput.textarea && terminos.checked) submitButton.toggleAttribute('disabled', false)
 	else submitButton.toggleAttribute('disabled', true)
 }
 
 
-// Evento checkbox.
+// Evento click sobre Términos y Condiciones.
 terminos.addEventListener('click', submitController)
 
 
-// Evento inputs.
+// Eventos keyup y blur sobre los inputs.
 inputs.forEach(input => {
 	input.addEventListener('keyup', validarFormulario)
 	input.addEventListener('blur', validarFormulario)
 })
 
-
+// Evento submit del formulaio.
 form.addEventListener('submit', handleSubmit)
 
 async function handleSubmit(event) {
@@ -133,9 +132,30 @@ async function handleSubmit(event) {
 			'Accept': 'application/json'
 		}
 	})
+
 	if (response.ok) {
-		this.reset()
-		alert('Formulario enviado exitosamente')
+		modal.style.visibility = 'visible'
+		modalContent.classList.add('modal--open')
 	}
 }
 
+
+// VENTANA MODAL
+
+const   modal = document.getElementById('modal'),
+        closeModal = document.getElementById('modal-close'),
+        modalContent = document.getElementById('modal-content')
+
+// Función cerrar ventana modal.
+const close = e => {
+    e.stopPropagation()
+    modalContent.classList.remove('modal--open')
+    setTimeout(() => modal.style.visibility = 'hidden',1000)
+}
+
+// Cerrando la ventana modal.
+closeModal.addEventListener('click', e => {
+    close(e)
+	form.reset()
+	submitButton.toggleAttribute('disabled', true)
+})

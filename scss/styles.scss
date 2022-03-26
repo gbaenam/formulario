@@ -136,8 +136,8 @@ button {
     height: 100vh;
     z-index: 1000;
     position: fixed;
-    // visibility: hidden;
-    background-color: rgba(0,0,0,.7);
+    visibility: hidden;
+    background-color: rgba(0,0,0,.8);
 
     // Centrado de modal__content
     display: flex;
@@ -155,14 +155,18 @@ button {
         align-items: center;
         flex-direction: column;
         justify-content: center;
+
+        // Animación de modal__content
+        transition: transform 1s;
+        transform: translateY(-100vh);
     }
 
     &__confirmation {
         margin-top: 0;
-        background-color: #00a135;
         color: #fff;
         padding: 10px 20px;
         border-radius: 10px;
+        background-color: #00a135;
     }
 
     &__message {
@@ -170,11 +174,16 @@ button {
     }
 
     &__close {
-        padding: 7px 60px;
         color: white;
+        padding: 7px 60px;
         background-color: #0a0a0a;
     }
 
+}
+
+
+.modal--open {
+    transform: translateY(0);
 }
 
 

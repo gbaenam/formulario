@@ -80,7 +80,8 @@ button {
   height: 100vh;
   z-index: 1000;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -92,19 +93,24 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    transition: transform 1s;
+    transform: translateY(-100vh); }
   .modal__confirmation {
     margin-top: 0;
-    background-color: #00a135;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 10px; }
+    border-radius: 10px;
+    background-color: #00a135; }
   .modal__message {
     margin-bottom: 3rem; }
   .modal__close {
-    padding: 7px 60px;
     color: white;
+    padding: 7px 60px;
     background-color: #0a0a0a; }
+
+.modal--open {
+  transform: translateY(0); }
 
 .correcto.form__input {
   border: 2px solid #1ed12d; }
