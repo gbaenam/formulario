@@ -10,7 +10,7 @@ body {
 p {
   margin: 0; }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none; }
 
 label,
