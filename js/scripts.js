@@ -24,7 +24,7 @@ const checkInput = {
 
 // Objeto mensajes de error.
 const errorMessage = {
-	nameError: 'Ingrese únicamente letras mayúsculas y minúsculas',
+	nameError: 'Formato de nombre inválido',
 	emailError: 'Ingrese un formato de correo válido',
 	email2Error: 'Los correos no son iguales',
 	txareaError: 'Máximo 300 caracteres, no incluya [ ] { } / = ¬ + ç ~ |'
@@ -78,13 +78,13 @@ const changeState = (condicion, elemento) => {
 	if (condicion) {
 		message.innerText = ''
 		checkInput[elemento.name] = true
-		elemento.classList.remove('incorrecto', 'txarea-incorrecto')
-		elemento.classList.add('correcto', 'txarea-correcto')
+		elemento.classList.remove('input--incorrecto')
+		elemento.classList.add('input--correcto')
 	} else {
 		showError(elemento, message)
 		checkInput[elemento.name] = false
-		elemento.classList.add('incorrecto', 'txarea-incorrecto')
-		elemento.classList.remove('correcto', 'txarea-correcto')
+		elemento.classList.add('input--incorrecto')
+		elemento.classList.remove('input--correcto')
 	}
 	submitController()
 }

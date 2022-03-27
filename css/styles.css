@@ -51,15 +51,10 @@ button {
   .form__input {
     font-size: 18px;
     border: 2px solid transparent; }
-    .form__input:focus {
-      border-color: blue; }
   .form__text-area {
     resize: none;
     min-height: 150px;
     border: 2px solid transparent; }
-    .form__text-area:focus {
-      outline: none;
-      border-color: blue; }
   .form__input, .form__text-area {
     width: 100%;
     padding: 10px;
@@ -112,14 +107,8 @@ button {
 .modal--open {
   transform: translateY(0); }
 
-.correcto.form__input {
+.input--correcto {
   border: 2px solid #1ed12d; }
 
-.incorrecto.form__input {
-  border: 2px solid red; }
-
-.txarea-correcto.form__text-area {
-  border: 2px solid #1ed12d; }
-
-.txarea-incorrecto.form__text-area {
+.input--incorrecto {
   border: 2px solid red; }

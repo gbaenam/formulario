@@ -90,9 +90,9 @@ button {
         font-size: 18px;
         border: 2px solid transparent;
 
-        &:focus {
-            border-color: blue;
-        }
+        // &:focus {
+        //     border-color: blue;
+        // }
     }
 
 
@@ -101,10 +101,10 @@ button {
         min-height: 150px;
         border: 2px solid transparent;
 
-        &:focus {
-            outline: none;
-            border-color: blue;
-        }
+        // &:focus {
+        //     outline: none;
+        //     border-color: blue;
+        // }
     }
 
     &__input,
@@ -190,21 +190,21 @@ button {
 
 // Estilos para validación del formulario.
 
-.correcto.form__input {
+.input--correcto {
     border: 2px solid #1ed12d;
 }
 
-.incorrecto.form__input {
+.input--incorrecto {
     border: 2px solid red;
 }
 
-.txarea-correcto.form__text-area {
-    border: 2px solid #1ed12d;
-}
+// .txarea-correcto.form__text-area {
+//     border: 2px solid #1ed12d;
+// }
 
-.txarea-incorrecto.form__text-area {
-    border: 2px solid red;
-}
+// .txarea-incorrecto.form__text-area {
+//     border: 2px solid red;
+// }
 
 
 
