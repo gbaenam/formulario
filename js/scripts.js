@@ -78,13 +78,13 @@ const changeState = (condicion, elemento) => {
 	if (condicion) {
 		message.innerText = ''
 		checkInput[elemento.name] = true
-		elemento.classList.remove('input--incorrecto')
-		elemento.classList.add('input--correcto')
+		formBox.classList.remove('incorrecto')
+		formBox.classList.add('correcto')
 	} else {
 		showError(elemento, message)
 		checkInput[elemento.name] = false
-		elemento.classList.add('input--incorrecto')
-		elemento.classList.remove('input--correcto')
+		formBox.classList.add('incorrecto')
+		formBox.classList.remove('correcto')
 	}
 	submitController()
 }

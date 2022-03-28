@@ -112,7 +112,7 @@ button {
 }
 
 .modal {
-    // Estilos de modal
+    // Estilos de la ventana modal
     top: 0;
     left: 0;
     width: 100%;
@@ -164,6 +164,8 @@ button {
 
 }
 
+
+// Apertura ventana modal.
 .modal--open {
     transform: translateY(0);
 }
@@ -172,22 +174,19 @@ button {
 
 // Estilos para validación del formulario.
 
-.input--correcto {
-    border: 2px solid #1ed12d;
+.correcto .form__input {
+    border-color: #1ed12d;
 }
 
-.input--incorrecto {
-    border: 2px solid red;
+.incorrecto .form__input {
+    border-color: red;
 }
 
-// .txarea-correcto.form__text-area {
-//     border: 2px solid #1ed12d;
-// }
+.correcto .form__text-area {
+    border-color: #1ed12d;
+}
 
-// .txarea-incorrecto.form__text-area {
-//     border: 2px solid red;
-// }
-
-
-
+.incorrecto .form__text-area {
+    border-color: red;
+}
 

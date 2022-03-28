@@ -109,8 +109,14 @@ button {
 .modal--open {
   transform: translateY(0); }
 
-.input--correcto {
-  border: 2px solid #1ed12d; }
+.correcto .form__input {
+  border-color: #1ed12d; }
 
-.input--incorrecto {
-  border: 2px solid red; }
+.incorrecto .form__input {
+  border-color: red; }
+
+.correcto .form__text-area {
+  border-color: #1ed12d; }
+
+.incorrecto .form__text-area {
+  border-color: red; }
