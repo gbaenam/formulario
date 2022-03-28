@@ -13,7 +13,8 @@ p {
     margin: 0;
 }
 
-input, textarea {
+input, 
+textarea {
     &:focus {
         outline: none;
     }
@@ -32,46 +33,38 @@ button {
 }
 
 .container {
-    padding: 20px 10px;
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
     max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 10px;
 
     background-color: lightgrey;
 }
 
 .form {
-
+    display: flex;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 540px;
-
-    display: flex;
     flex-direction: column;
-
-    // background-color: pink;
-
 
     &__fielset {
         padding: 0;
         border: none;
     }
 
-
     &__legent {
-        background-color: lightsalmon;
+        width: 100%;
         font-size: 30px;
         text-align: center;
         margin-bottom: 10px;
 
-        width: 100%;
+        background-color: lightsalmon;
     }
 
     &__box {
         margin-bottom: 20px;
-
-        // background-color: pink;
     }
 
     &__box:last-child {
@@ -84,34 +77,25 @@ button {
         display: inline-block;
     }
 
-
     &__input {
-        // height: 40px;
         font-size: 18px;
-        border: 2px solid transparent;
-
-        // &:focus {
-        //     border-color: blue;
-        // }
     }
-
 
     &__text-area {
         resize: none;
         min-height: 150px;
-        border: 2px solid transparent;
-
-        // &:focus {
-        //     outline: none;
-        //     border-color: blue;
-        // }
     }
 
     &__input,
     &__text-area {
         width: 100%;
         padding: 10px;
-        // border-radius: 8px;
+        border: 2px solid transparent;
+
+        &:focus {
+                outline: none;
+                border-color: blue;
+            }
     }
 
     &__input-terminos {
@@ -122,9 +106,8 @@ button {
 
     &__button {
         width: 50%;
-        align-self: center;
         padding: 10px;
-        // border-radius: 15px;
+        align-self: center;
     }
 }
 
@@ -180,7 +163,6 @@ button {
     }
 
 }
-
 
 .modal--open {
     transform: translateY(0);
