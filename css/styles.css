@@ -57,10 +57,12 @@ button {
   .form__input, .form__text-area {
     width: 100%;
     padding: 10px;
+    border-radius: 3px;
+    transition: .2s ease all;
     border: 2px solid transparent; }
     .form__input:focus, .form__text-area:focus {
-      outline: none;
-      border-color: blue; }
+      border-color: #0075ff;
+      box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4); }
   .form__input-terminos {
     width: 20px;
     height: 20px;
