@@ -158,4 +158,12 @@ closeModal.addEventListener('click', e => {
     close(e)
 	form.reset()
 	submitButton.toggleAttribute('disabled', true)
+
+	// Capturando todos los contenedores "form__box" con la clase "correcto"
+	const classCorrecto = document.querySelectorAll('.correcto')
+
+	// Limpiando la clase correcto.
+	classCorrecto.forEach((element) => {
+		element.classList.remove('correcto')
+	})
 })
