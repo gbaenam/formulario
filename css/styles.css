@@ -18,12 +18,20 @@ label,
 button {
   cursor: pointer; }
 
+button {
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  background-color: transparent; }
+
 .container {
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 10px;
+  padding: 30px 8px 30px;
   background-color: lightgrey; }
 
 .form {
@@ -43,8 +51,8 @@ button {
     background-color: lightsalmon; }
   .form__box {
     margin-bottom: 20px; }
-  .form__box:last-child {
-    margin-bottom: 40px; }
+    .form__box:last-child {
+      margin-bottom: 40px; }
   .form__label {
     font-size: 14px;
     margin-bottom: 8px;
@@ -68,9 +76,19 @@ button {
     height: 20px;
     margin-right: 5px; }
   .form__button {
-    width: 50%;
-    padding: 10px;
-    align-self: center; }
+    color: #fff;
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    background-color: #00a9ff;
+    transition: all 150ms ease-in-out;
+    font-family: 'Oxygen', sans-serif; }
+    .form__button:hover {
+      background-color: #3a1cff; }
+    .form__button:disabled {
+      color: lightgrey;
+      background-color: #eeeeee; }
 
 .modal {
   top: 0;
