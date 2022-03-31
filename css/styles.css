@@ -10,13 +10,12 @@ body {
 p {
   margin: 0; }
 
-input:focus,
-textarea:focus {
-  outline: none; }
-
-label,
-button {
-  cursor: pointer; }
+input,
+textarea {
+  font-family: 'Ubuntu', sans-serif; }
+  input:focus,
+  textarea:focus {
+    outline: none; }
 
 button {
   padding: 0;
@@ -25,6 +24,12 @@ button {
   font-family: inherit;
   line-height: inherit;
   background-color: transparent; }
+
+label,
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif; }
 
 .container {
   width: 100%;
@@ -51,14 +56,18 @@ button {
     background-color: lightsalmon; }
   .form__box {
     margin-bottom: 20px; }
-    .form__box:last-child {
-      margin-bottom: 40px; }
+  .form__box:last-child {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center; }
+  .form__box:last-child label {
+    margin-bottom: 0; }
   .form__label {
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 8px;
     display: inline-block; }
   .form__input {
-    font-size: 18px; }
+    font-size: 16px; }
   .form__text-area {
     resize: none;
     min-height: 150px; }
@@ -80,10 +89,8 @@ button {
     font-size: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
-    text-transform: uppercase;
-    background-color: #00a9ff;
-    transition: all 150ms ease-in-out;
-    font-family: 'Oxygen', sans-serif; }
+    background-color: #0075ff;
+    transition: all 150ms ease-in-out; }
     .form__button:hover {
       background-color: #3a1cff; }
     .form__button:disabled {

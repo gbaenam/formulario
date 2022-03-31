@@ -7,14 +7,17 @@
 body {
     margin: 0;
     padding: 0;
+    // font-family: 'Ubuntu', sans-serif;
 }
 
 p {
     margin: 0;
 }
 
-input, 
+input,
 textarea {
+    font-family: 'Ubuntu', sans-serif;
+
     &:focus {
         outline: none;
     }
@@ -27,11 +30,6 @@ textarea {
 //     padding: 10px;
 // }
 
-label,
-button {
-    cursor: pointer;
-}
-
 button {
     padding: 0;
     border: none;
@@ -39,6 +37,13 @@ button {
     font-family: inherit;
     line-height: inherit;
     background-color: transparent;
+}
+
+label,
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -73,20 +78,26 @@ button {
 
     &__box {
         margin-bottom: 20px;
+    }
 
-        &:last-child {
-            margin-bottom: 40px;
-        }
+    &__box:last-child {
+        display: flex;
+        margin-bottom: 40px;
+        align-items: center;
+    }
+
+    &__box:last-child label {
+        margin-bottom: 0;
     }
 
     &__label {
-        font-size: 14px;
+        font-size: 15px;
         margin-bottom: 8px;
         display: inline-block;
     }
 
     &__input {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     &__text-area {
@@ -119,10 +130,8 @@ button {
         font-size: 20px;
         padding-top: 12px;
         padding-bottom: 12px;
-        text-transform: uppercase;
-        background-color: #00a9ff;
+        background-color: #0075ff;
         transition: all 150ms ease-in-out;
-        font-family: 'Oxygen', sans-serif;
 
         &:hover {
             background-color: #3a1cff;
