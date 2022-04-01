@@ -68,6 +68,11 @@ button {
     font-size: 15px;
     margin-bottom: 5px;
     display: inline-block; }
+  .form__error-message {
+    color: #cc0000;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Ubuntu', sans-serif; }
   .form__input {
     font-size: 16px; }
   .form__text-area {

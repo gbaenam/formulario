@@ -75,10 +75,7 @@ const validarMail2 = () => {
 const changeState = (condicion, elemento) => {
 	const formBox = elemento.parentElement,
 		message = formBox.querySelector('p')
-		message.style.color = '#cc0000';
-		message.style.fontWeight = 'bold';
-		message.style.marginBottom = '5px';
-		message.style.fontFamily = 'Ubuntu', 'sans-serif';
+		message.classList.add('form__error-message')
 
 	if (condicion) {
 		message.innerText = ''
