@@ -24,10 +24,10 @@ const checkInput = {
 
 // Objeto mensajes de error.
 const errorMessage = {
-	nameError: 'Formato de nombre inválido',
-	emailError: 'Ingrese un formato de correo válido',
+	nameError: 'Ingrese únicamente letras',
+	emailError: 'Formato de correo no válido',
 	email2Error: 'Los correos no son iguales',
-	txareaError: 'Máximo 300 caracteres, no incluya [ ] { } / = ¬ + ç ~ |'
+	txareaError: 'Máximo 300 caracteres'
 }
 
 
@@ -75,6 +75,11 @@ const validarMail2 = () => {
 const changeState = (condicion, elemento) => {
 	const formBox = elemento.parentElement,
 		message = formBox.querySelector('p')
+		message.style.color = '#cc0000';
+		message.style.fontWeight = 'bold';
+		message.style.marginBottom = '5px';
+		message.style.fontFamily = 'Ubuntu', 'sans-serif';
+
 	if (condicion) {
 		message.innerText = ''
 		checkInput[elemento.name] = true
