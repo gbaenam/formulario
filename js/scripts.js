@@ -9,12 +9,12 @@ const form = document.getElementById('form'),
 
 // Objeto Expresiones Regulares.
 const er = {
-	erName: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+)([\s][A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+)?$/,
+	erName: /^(([A-ZÁÉÍÓÚa-zñáéíóú])[\s]?)+$/,
 	erEmail: /^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/,
-	erTextArea: /^[^\s[\]{}/=¬+ç~|@][a-zñáéíóúA-ZÁÉÍÓÚ0-9¿?$@#()'!¡,;\-_:.&€£*%\s]+$/
+	erTextArea: /^[\w]+[\s]?([\w\,\.\$\&\#\%\"\¡\!\¿\?\(\)\@\ñ\á\é\í\ó\ú]\s?)+$/
 }
 
-// Objeto validar campos.
+// Objeto validar campos
 const checkInput = {
 	name: false,
 	email: false,
@@ -25,7 +25,7 @@ const checkInput = {
 // Objeto mensajes de error.
 const errorMessage = {
 	nameError: 'Ingrese únicamente letras',
-	emailError: 'Formato de correo no válido',
+	emailError: 'Formato de correo inválido',
 	email2Error: 'Los correos no son iguales',
 	txareaError: 'Máximo 300 caracteres'
 }
@@ -48,8 +48,7 @@ const validarFormulario = e => {
 
 	// Mensaje
 	if (e.target.name === 'textarea') {
-		const maxText = e.target.value.trim()
-		if (maxText.length <= 300) validarDatos(er.erTextArea, e.target.value, e.target)
+		if (e.target.value.trim().length <= 300) validarDatos(er.erTextArea, e.target.value, e.target)
 		else changeState(false, e.target)
 	}
 }
