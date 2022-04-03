@@ -11,7 +11,7 @@ const form = document.getElementById('form'),
 const er = {
 	erName: /^(([A-ZÁÉÍÓÚa-zñáéíóú])[\s]?)+$/,
 	erEmail: /^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/,
-	erTextArea: /^[\w]+[\s]?([\w\,\.\$\&\#\%\"\¡\!\¿\?\(\)\@\ñ\á\é\í\ó\ú]\s?)+$/
+	erTextArea: /^([\w]\s?)([\w\,\.\$\&\#\%\"\¡\!\¿\?\(\)\@\ñ\á\é\í\ó\ú]\s?)+$/
 }
 
 // Objeto validar campos
