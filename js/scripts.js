@@ -27,7 +27,7 @@ const errorMessage = {
 	nameError: 'Ingrese únicamente letras',
 	emailError: 'Formato de correo inválido',
 	email2Error: 'Los correos no son iguales',
-	txareaError: 'Máximo 300 caracteres'
+	txareaError: 'Máximo 300 caracteres; algunos caracteres especiales están restringidos'
 }
 
 
